@@ -12,7 +12,8 @@ Interfaz que consume la API para mostrar la lista de buses.
 
 Interfaz que consume la API para buscar por ID
 
-📸Busqueda por ID: <img width="819" height="450" alt="react_3" src="https://github.com/user-attachments/assets/c613ca53-4737-485f-b5b1-fed5343f2ccc" />
+📸Busqueda por ID: 
+<img width="819" height="450" alt="react_3" src="https://github.com/user-attachments/assets/c613ca53-4737-485f-b5b1-fed5343f2ccc" />
 
 ---
 
