@@ -6,13 +6,12 @@ Aplicación full stack desarrollada con **Spring Boot y React**, que permite ges
 
 # 🖥️ Frontend (React)
 
-Interfaz que consume la API para mostrar la lista de buses.
+Interfaz que consume la API para mostrar la lista de buses y la busqueda por ID.
 
 📸 Vista principal:<img width="1118" height="448" alt="react_1" src="https://github.com/user-attachments/assets/61e71980-6c6d-474b-80ce-bec54018a8b9" />
 
-Interfaz que consume la API para buscar por ID
-
 📸Busqueda por ID: 
+
 <img width="819" height="450" alt="react_3" src="https://github.com/user-attachments/assets/c613ca53-4737-485f-b5b1-fed5343f2ccc" />
 
 ---
