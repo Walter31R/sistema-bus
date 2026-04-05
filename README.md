@@ -7,9 +7,7 @@ Aplicación full stack desarrollada con **Spring Boot y React**, que permite ges
 # 🖥️ Frontend (React)
 
 Interfaz que consume la API para mostrar el inicio de sesión la lista de buses y la busqueda por ID.
-
-📸 Login:
-<img width="450" height="394" alt="login" src="https://github.com/user-attachments/assets/f2190829-ba27-42c4-bac0-e1b4932d63ff" />
+📸 Login:<img width="450" height="394" alt="login" src="https://github.com/user-attachments/assets/f2190829-ba27-42c4-bac0-e1b4932d63ff" />
 
 
 📸 Vista principal: <img width="1132" height="454" alt="react_1" src="https://github.com/user-attachments/assets/170dfac1-1633-481e-8be1-33a9ed97480d" />
