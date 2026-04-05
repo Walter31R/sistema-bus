@@ -1,17 +1,25 @@
 import { useState, useEffect } from "react";
 import { getBuses, getBusById } from "../services/BusServices";
+import { logout } from "../services/AuthServices";
 import BusCard from "../components/BusCard";
 import BusDetail from "./BusDetail";
 
-function BusList() {
+function BusList({ onLogout }) {
+
     const [buses, setBuses] = useState([]);
+
     const [page, setPage] = useState(0);
+
     const [totalPages, setTotalPages] = useState(0);
+
     const [busSeleccionado, setBusSeleccionado] = useState(null);
+
     const [loading, setLoading] = useState(false);
+
     const [error, setError] = useState(null);
 
     const [buscarId, setBuscarId] = useState("");
+
     const [errorBusqueda, setErrorBusqueda] = useState(null);
 
     useEffect(() => {
@@ -30,6 +38,7 @@ function BusList() {
         cargarBuses();
     }, [page]);
 
+
     const buscarPorId = async () => {
         if (!buscarId) return;
         setErrorBusqueda(null);
@@ -42,10 +51,16 @@ function BusList() {
         }
     };
 
+    
     const cerrarDetalle = () => {
         setBusSeleccionado(null);
         setErrorBusqueda(null);
         setBuscarId("");
+    };
+
+    const handleLogout = () => {
+        logout();
+        onLogout();
     };
 
     if (loading) return <p>Cargando buses...</p>;
@@ -53,9 +68,16 @@ function BusList() {
 
     return (
         <div style={{ padding: "20px" }}>
-            <h1>🚌 Lista de Buses</h1>
 
-            {/* BUSCADOR */}
+            {/* HEADER*/}
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <h1>🚌 Lista de Buses</h1>
+                <button onClick={handleLogout} style={{ padding: "8px 16px" }}>
+                    Cerrar sesión
+                </button>
+            </div>
+
+            {/* VUSCADOR*/}
             <div style={{ marginBottom: "20px", display: "flex", gap: "10px" }}>
                 <input
                     type="number"
@@ -69,7 +91,6 @@ function BusList() {
                 </button>
             </div>
 
-            {/* ERROR BÚSQUEDA */}
             {errorBusqueda && (
                 <p style={{ color: "red" }}>❌ {errorBusqueda}</p>
             )}
@@ -93,8 +114,10 @@ function BusList() {
                 </tbody>
             </table>
 
-            {/* PAGINACIÓN */}
-            <div style={{ marginTop: "15px", display: "flex", gap: "10px" }}>
+            {/* PAGINACIÓN*/}
+            <div style={{ marginTop: "15px",
+                 display: "flex", 
+                 gap: "10px" }}>
                 <button
                     onClick={() => setPage((p) => p - 1)}
                     disabled={page === 0}>
@@ -108,7 +131,7 @@ function BusList() {
                 </button>
             </div>
 
-            {/* MODAL */}
+            {/* MODAL*/}
             {busSeleccionado && (
                 <BusDetail bus={busSeleccionado} onCerrar={cerrarDetalle} />
             )}
